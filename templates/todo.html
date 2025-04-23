@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do Form</title>
 </head>
+
 <body>
     <h2>Submit To-Do Item</h2>
 
     {% if error %}
-        <div style="color: red;">
-            <p>{{ error }}</p>
-        </div>
+    <div style="color: red;">
+        <p>{{ error }}</p>
+    </div>
     {% endif %}
 
     <form method="POST" action="{{ url_for('submit_todo_item') }}">
         <label for="itemId">Item ID:</label>
-<input type="text" id="itemId" name="itemId" required><br><br>
+        <input type="text" id="itemId" name="itemId" required><br><br>
+
+        <label for="itemUUID">Item UUID:</label>
+        <input type="text" id="itemUUID" name="itemUUID" required><br><br>
+
 
         <label for="itemName">Item Name:</label>
         <input type="text" id="itemName" name="itemName" required><br><br>
-        
+
         <label for="itemDescription">Item Description:</label>
         <textarea id="itemDescription" name="itemDescription" required></textarea><br><br>
 
         <input type="submit" value="Submit To-Do">
     </form>
 </body>
+
 </html>
